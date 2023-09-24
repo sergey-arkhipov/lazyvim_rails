@@ -1,0 +1,3 @@
+return {
+  { "honza/vim-snippets" },
+}
