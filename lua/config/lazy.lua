@@ -1,4 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
@@ -8,24 +8,26 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- vim.keymap.del("n", "yS")
 -- vim.b["surround_{char2nr('r')}"] = "```\1language: \1\r```"
 
-require("lazy").setup({
+require('lazy').setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
     -- import any extras modules here
     -- Prettier  сохраняет файлы md, обрезая часть после 120 линии. Не понятно, почему.
     -- { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.test.core" },
-    { import = "lazyvim.plugins.extras.lang.ruby" },
-    { import = "lazyvim.plugins.extras.linting.eslint" },
-    { import = "lazyvim.plugins.extras.coding.yanky" },
+    { import = 'lazyvim.plugins.extras.test.core' },
+    { import = 'lazyvim.plugins.extras.lang.ruby' },
+    { import = 'lazyvim.plugins.extras.linting.eslint' },
+    { import = 'lazyvim.plugins.extras.coding.yanky' },
+    { import = 'lazyvim.plugins.extras.dap.core' },
+    { import = 'lazyvim.plugins.extras.dap.nlua' },
     -- { import = "lazyvim.plugins.extras.formatting.prettierd" },
 
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
-    { import = "plugins" },
+    { import = 'plugins' },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -36,20 +38,20 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { 'tokyonight', 'habamax' } },
   checker = { enabled = false }, -- automatically check for plugin updates
   performance = {
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
-        "gzip",
+        'gzip',
         -- "matchit",
         -- "matchparen",
         -- "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
       },
     },
   },
