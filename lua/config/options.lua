@@ -4,10 +4,10 @@
 local opt = vim.opt
 
 opt.langmap =
-  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+  'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
 opt.linebreak = true
 opt.wrap = true
-opt.iskeyword:append("-") -- consider string-string as whole word
+opt.iskeyword:append('-') -- consider string-string as whole word
 -- spelling
-opt.spelllang = { "en_us", "ru" } -- Словари рус eng
+opt.spelllang = { 'en_us', 'ru' } -- Словари рус eng
 opt.spell = true
