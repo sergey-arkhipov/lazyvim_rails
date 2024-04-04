@@ -18,6 +18,22 @@ return {
             imply_local = false, -- If true, will attempt to use --imply_local option when calling |:DiffviewOpen|
           },
         },
+        popup = { -- The popup for comment creation, editing, and replying
+          exit = '<leader>q',
+          perform_action = '<leader>s', -- Once in normal mode, does action (like saving comment or editing description, etc)
+          perform_linewise_action = '<leader>l', -- Once in normal mode, does the linewise action (see logs for this job, etc)
+          width = '40%',
+          height = '60%',
+          border = 'rounded', -- One of "rounded", "single", "double", "solid"
+          opacity = 1.0, -- From 0.0 (fully transparent) to 1.0 (fully opaque)
+          comment = nil, -- Individual popup overrides, e.g. { width = "60%", height = "80%", border = "single", opacity = 0.85 },
+          edit = nil,
+          note = nil,
+          pipeline = nil,
+          reply = nil,
+          squash_message = nil,
+          backup_register = '+',
+        },
         discussion_tree = { -- The discussion tree that holds all comments
           auto_open = false, -- Automatically open when the reviewer is opened
           switch_view = 'S', -- Toggles between the notes and discussions views
