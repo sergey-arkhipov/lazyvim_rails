@@ -21,6 +21,7 @@ wk.register({
       r = { require('gitlab').review, 'Review' },
       s = { require('gitlab').summary, 'Summary' },
       c = { require('gitlab').create_comment, 'Comment' },
+      C = { require('gitlab').create_comment_suggestion, 'Comment suggestion' },
       d = { require('gitlab').toggle_discussions, 'Toggle Discussions' },
       p = { require('gitlab').pipeline, 'Pipeline' },
       o = { require('gitlab').open_in_browser, 'Open in browser' },
@@ -37,6 +38,13 @@ wk.register({
     },
   },
 }, { prefix = '<leader>' })
+
+wk.register({
+  ['<leader>l'] = {
+    name = 'Gitlab',
+    c = { require('gitlab').create_comment_suggestion, 'Comment suggestion' },
+  },
+}, { mode = 'v' })
 -- local gitlab = require('gitlab')
 -- vim.keymap.set('n', '<leader>glr', gitlab.review)
 -- vim.keymap.set('n', '<leader>gls', gitlab.summary)
