@@ -1,6 +1,6 @@
 return {
-  -- add colo
-  { 'ellisonleao/gruvbox.nvim' },
+  -- add colorscheme
+  { 'ellisonleao/gruvbox.nvim', lazy = true },
   { 'rebelot/kanagawa.nvim', lazy = true },
   { 'sainnhe/sonokai', lazy = true },
   { 'dracula/vim', lazy = true },

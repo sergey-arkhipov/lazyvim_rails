@@ -1,28 +1,28 @@
 return {
-  "nvim-neotest/neotest",
+  'nvim-neotest/neotest',
   optional = true,
   dependencies = {
-    "olimorris/neotest-rspec",
+    'olimorris/neotest-rspec',
   },
   config = function()
     ---@diagnostic disable-next-line missing-fields
-    require("neotest").setup({
+    require('neotest').setup({
       adapters = {
-        require("neotest-rspec"),
+        require('neotest-rspec'),
       },
     })
   end,
 
   opts = {
     adapters = {
-      ["neotest-rspec"] = {
+      ['neotest-rspec'] = {
         -- NOTE: By default neotest-rspec uses the system wide rspec gem instead of the one through bundler
         rspec_cmd = function()
-          return vim.tbl_flatten({
-            "bundle",
-            "exec",
-            "rspec",
-          })
+          return {
+            'bundle',
+            'exec',
+            'rspec',
+          }
         end,
       },
     },

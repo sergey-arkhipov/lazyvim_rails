@@ -1,3 +1,7 @@
-return {
-  { "honza/vim-snippets" },
-}
+if true then
+  return {}
+end
+
+-- return {
+--   { 'honza/vim-snippets' },
+-- }
