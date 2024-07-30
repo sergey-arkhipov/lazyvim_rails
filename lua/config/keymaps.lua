@@ -2,49 +2,36 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local wk = require('which-key')
-wk.register({
-  ['<leader>t'] = {
-    -- name = "Test",
-    C = { '<cmd>TestFile<cr>', 'Run Vim-test(cucumber)' },
-    c = { '<cmd>TestNearest -strategy=neovim<cr>', 'Run Nearest test' },
-  },
-  ['<leader>c'] = {
-    -- name = "+code",
-    t = { '<cmd>EasyAlign*|<cr>', 'Table Align', mode = 'v' },
-  },
+wk.add({
+
+  { '<leader>cp', '<cmd>let @+ = expand("%:t")<cr>', desc = 'Copy filename' },
+  { '<leader>tC', '<cmd>TestFile<cr>', desc = 'Run Vim-test(cucumber)' },
+  { '<leader>tc', '<cmd>TestNearest -strategy=neovim<cr>', desc = 'Run Nearest test' },
+  { '<leader>ct', '<cmd>EasyAlign*|<cr>', desc = 'Table Align', mode = 'v' },
 })
 
-wk.register({
-  g = {
-    l = {
-      name = 'Gitlab',
-      r = { require('gitlab').review, 'Review' },
-      s = { require('gitlab').summary, 'Summary' },
-      c = { require('gitlab').create_comment, 'Comment' },
-      C = { require('gitlab').create_comment_suggestion, 'Comment suggestion' },
-      d = { require('gitlab').toggle_discussions, 'Toggle Discussions' },
-      p = { require('gitlab').pipeline, 'Pipeline' },
-      o = { require('gitlab').open_in_browser, 'Open in browser' },
-      a = {
-        name = 'Assignee',
-        a = { require('gitlab').add_assignee, 'Add assignee' },
-        d = { require('gitlab').delete_assignee, 'Delete assignee' },
-      },
-      w = {
-        name = 'Reviewer',
-        a = { require('gitlab').add_reviewer, 'Add Reviewer' },
-        d = { require('gitlab').delete_reviewer, 'Delete Reviewer' },
-      },
-    },
-  },
-}, { prefix = '<leader>' })
+wk.add({
 
-wk.register({
-  ['<leader>l'] = {
-    name = 'Gitlab',
-    c = { require('gitlab').create_comment_suggestion, 'Comment suggestion' },
-  },
-}, { mode = 'v' })
+  { '<leader>gl', group = 'Gitlab' },
+  { '<leader>glC', require('gitlab').create_comment_suggestion, desc = 'Comment suggestion' },
+  { '<leader>gla', group = 'Assignee' },
+  { '<leader>glaa', require('gitlab').add_assignee, desc = 'Add assignee' },
+  { '<leader>glad', require('gitlab').delete_assignee, desc = 'Delete assignee' },
+  { '<leader>glc', require('gitlab').create_comment, desc = 'Comment' },
+  { '<leader>gld', require('gitlab').toggle_discussions, desc = 'Toggle Discussions' },
+  { '<leader>glo', require('gitlab').open_in_browser, desc = 'Open in browser' },
+  { '<leader>glp', require('gitlab').pipeline, desc = 'Pipeline' },
+  { '<leader>glr', require('gitlab').review, desc = 'Review' },
+  { '<leader>gls', require('gitlab').summary, desc = 'Summary' },
+  { '<leader>glw', group = 'Reviewer' },
+  { '<leader>glwa', require('gitlab').add_reviewer, desc = 'Add Reviewer' },
+  { '<leader>glwd', require('gitlab').delete_reviewer, desc = 'Delete Reviewer' },
+})
+
+wk.add({
+  { '<leader>l', group = 'Gitlab', mode = 'v' },
+  { '<leader>lc', require('gitlab').create_comment_suggestion, desc = 'Comment suggestion', mode = 'v' },
+})
 -- local gitlab = require('gitlab')
 -- vim.keymap.set('n', '<leader>glr', gitlab.review)
 -- vim.keymap.set('n', '<leader>gls', gitlab.summary)
