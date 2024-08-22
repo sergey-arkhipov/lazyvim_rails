@@ -12,6 +12,10 @@ return {
     require('gitlab.server').build(true)
   end, -- Builds the Go binary
   config = function()
-    require('gitlab').setup()
+    require('gitlab').setup({
+      discussion_tree = { -- The discussion tree that holds all comments
+        auto_open = false, -- Automatically open when the reviewer is opened
+      },
+    })
   end,
 }
