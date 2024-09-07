@@ -28,3 +28,6 @@ vim.g.clipboard = {
 -- Now the '+' register will copy to system clipboard using OSC52
 vim.keymap.set('n', '<leader>c', '"+y')
 vim.keymap.set('n', '<leader>cc', '"+yy')
+
+vim.g.lazyvim_ruby_lsp = 'solargraph'
+vim.g.lazyvim_ruby_formatter = 'rubocop'
