@@ -6,9 +6,9 @@ return {
     opts = function(_, opts)
       local cmp = require('cmp')
       opts.sources = {
-        -- { name = 'nvim_lsp' }, -- Добавляет кучу не нужного текста. Может быть не так настроен lsp
-        { name = 'luasnip' },
         { name = 'buffer' },
+        { name = 'nvim_lsp' }, -- Разобрался, работает нормально. Последовательность определяет порядок выдачи
+        { name = 'luasnip' },
       }
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = 'emoji' } }))
     end,
