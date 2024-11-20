@@ -56,6 +56,7 @@ return {
           goto_previous_end = { ['[F'] = '@function.outer', ['[C'] = '@class.outer', ['[A'] = '@parameter.inner' },
         },
       },
+      endwise = { enable = true },
     },
   },
 }
