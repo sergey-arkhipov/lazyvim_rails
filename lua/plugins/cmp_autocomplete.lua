@@ -5,6 +5,16 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require('cmp')
+      opts.completion = {
+        autocomplete = false, -- Disable automatic popup
+      }
+      opts.mapping = {
+        ['<C-Space>'] = cmp.mapping.complete(), -- Trigger completion manually with Ctrl+Space
+        -- Other mappings...
+        ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection with Enter
+      }
       opts.sources = {
         { name = 'luasnip' },
         { name = 'nvim_lsp' }, -- Разобрался, работает нормально. Последовательность определяет порядок выдачи
