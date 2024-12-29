@@ -1,8 +1,12 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { 'RRethy/nvim-treesitter-endwise' },
+    dependencies = { 'RRethy/nvim-treesitter-endwise', 'windwp/nvim-ts-autotag' },
     opts = {
+      autotag = {
+        -- Setup autotag using treesitter config.
+        enable = true,
+      },
       highlight = {
         enable = true,
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

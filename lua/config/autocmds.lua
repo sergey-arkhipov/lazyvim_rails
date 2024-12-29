@@ -19,3 +19,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter' }, {
     vim.cmd('command! Vb :execute "normal! <C-v>"')
   end,
 })
+-- Autocommand to generate tags on file save
+-- vim.cmd([[
+--     autocmd BufWritePost * silent! !ctags -R .
+-- ]])
