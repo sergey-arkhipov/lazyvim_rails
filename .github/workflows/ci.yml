@@ -13,6 +13,9 @@ jobs:
           sudo apt install luarocks -y
           sudo luarocks install luacheck
       - name: Check style
-        run: luacheck **/*.lua --codes
+        run: |
+          shopt -s globstar
+          ls -al
+          luacheck **/*.lua --codes
       - name: Check formats
         run: npx @johnnymorganz/stylua-bin -g '*.lua' --check  -- .
