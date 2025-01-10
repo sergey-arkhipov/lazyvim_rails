@@ -41,7 +41,7 @@ return {
         '<leader>ua',
         function()
           vim.g.cmp_disabled = not vim.g.cmp_disabled
-          local msg = ''
+          local msg
           if vim.g.cmp_disabled == true then
             msg = 'Autocompletion (cmp) disabled'
           else
