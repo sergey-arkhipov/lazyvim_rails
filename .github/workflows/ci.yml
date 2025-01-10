@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install luacheck and stylua
         run: |
+          apt-get update && apt-get upgrade -qq
+          apt-get install luarocks -y
           luarocks install luacheck
       - name: Check style
         run: luacheck **/*.lua --codes
