@@ -11,7 +11,7 @@ jobs:
         run: |
           # sudo apt-get update && sudo apt-get upgrade -qq
           sudo apt install luarocks -y
-          luarocks install luacheck
+          sudo luarocks install luacheck
       - name: Check style
         run: luacheck **/*.lua --codes
       - name: Check formats
