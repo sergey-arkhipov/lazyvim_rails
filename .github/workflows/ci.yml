@@ -7,14 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: leafo/gh-actions-lua@v10
-        with:
-          luaVersion: "5.4.7"
-      - uses: leafo/gh-actions-luarocks@v2
-      - name: setup
+      - name: Install luacheck and stylua
         run: |
-          luarocks install busted
-          luarocks make
-      - name: test
-        run: |
-          busted -o utfTerminal
+          npx @johnnymorganz/stylua-bin -y
+          luarocks install luacheck
+      - name: Check style
+        run: luacheck **/*.lua --codes
+      - name: Check formats
+        run: stylua -g '*.lua' --check  -- .
