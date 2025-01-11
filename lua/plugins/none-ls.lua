@@ -10,6 +10,7 @@ return {
         -- null_ls.builtins.completion.spell,
         null_ls.builtins.diagnostics.markdownlint_cli2,
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.erb_lint,
         -- null_ls.builtins.diagnostics.markdownlint,
         -- require('none-ls.diagnostics.eslint'), -- requires none-ls-extras.nvim
       },
