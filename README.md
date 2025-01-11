@@ -18,6 +18,19 @@ Optional
 - Ripgrep (optional)[BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 - luarocks (optional)[LuaRocks - The Lua package manager](https://luarocks.org/)
 
+Create ~/.markdownlint.json config file for markdownlint-cli2, for example
+
+```json
+{
+  "line-length": {
+    "line_length": 180,
+    "code_blocks": false,
+    "tables": false
+  },
+  "ignore_code_blocks": true
+}
+```
+
 ## Improvements
 
 ### Enable defaults
@@ -25,19 +38,11 @@ Optional
 - ruby language
 - neotest
 
-### Replace
+### Additionals
 
-- echasnovski/mini.surround" --> nvim-surround
-
-### Additions
-
-- colorschemas
-  - ellisonleao/gruvbox.nvim
-  - rebelot/kanagawa.nvim
-  - sainnhe/sonokai
-- neotest-rspec
-- vim-test/vim-test
-- simrat39/symbols-outline.nvim
-- akinsho/toggleterm.nvim
-- vim-test/vim-test
-- junegunn/vim-easy-align
+- ERB - lint and format files
+- Spec - run suite or selected test for debug
+- Cucumber - run suite or selected test for debug
+- Reek -check smell code
+- LSP for ruby, definition, gems
+- Markdown - linter and formatter with config

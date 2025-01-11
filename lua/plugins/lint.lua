@@ -6,11 +6,7 @@ return {
       linters_by_ft = {
         eruby = { 'erb_lint' },
       },
-      linters = {
-        markdownlint = {
-          args = { '--config', '~/.markdownlint.jsonc', '--' },
-        },
-      },
+      linters = {},
     },
   },
 }
