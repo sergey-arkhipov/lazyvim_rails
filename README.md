@@ -13,10 +13,12 @@ Requeried for glab
 
 Optional
 
-- Lua (optional) [Lua: download](https://www.lua.org/download.html)
-- Lazygit (optional)[jesseduffield/lazygit: simple terminal UI for git commands](https://github.com/jesseduffield/lazygit)
-- Ripgrep (optional)[BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
-- luarocks (optional)[LuaRocks - The Lua package manager](https://luarocks.org/)
+| Name     | Link                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------ |
+| Lua      | [Lua: download](https://www.lua.org/download.html)                                                     |
+| Lazygit  | [jesseduffield/lazygit: simple terminal UI for git commands](https://github.com/jesseduffield/lazygit) |
+| Ripgrep  | [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)                                            |
+| luarocks | [LuaRocks - The Lua package manager](https://luarocks.org/)                                            |
 
 Create ~/.markdownlint.json config file for markdownlint-cli2, for example
 
@@ -31,7 +33,9 @@ Create ~/.markdownlint.json config file for markdownlint-cli2, for example
 }
 ```
 
-## Improvements
+- For git directory put this file in root, sometime linter not use setup config and require local config.
+
+## Improvement
 
 ### Enable defaults
 

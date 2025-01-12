@@ -5,7 +5,6 @@ return {
     formatters_by_ft = {
       ruby = { 'rubocop' },
       eruby = { 'htmlbeautifier' },
-      markdown = { 'markdownlint-cli2' },
     },
     formatters = {
       htmlbeautifier = {
