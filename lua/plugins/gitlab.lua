@@ -1,5 +1,5 @@
 return {
-  'sergey-arkhipov/gitlab.nvim',
+  'harrisoncramer/gitlab.nvim',
   dependencies = {
     { 'MunifTanjim/nui.nvim' },
     { 'nvim-lua/plenary.nvim' },
