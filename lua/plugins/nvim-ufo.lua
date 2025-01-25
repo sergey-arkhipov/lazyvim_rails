@@ -9,9 +9,7 @@ return {
     vim.api.nvim_create_autocmd('FileType', {
       group = vim.api.nvim_create_augroup('local_detach_ufo', { clear = true }),
       pattern = opts.filetype_exclude,
-      callback = function()
-        require('ufo').detach()
-      end,
+      callback = function() require('ufo').detach() end,
     })
 
     vim.opt.foldlevelstart = 99

@@ -5,7 +5,8 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
-vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+vim.opt.rtp:prepend(lazypath)
+-- vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- vim.keymap.del("n", "yS")
 -- vim.b["surround_{char2nr('r')}"] = "```\1language: \1\r```"
 
@@ -43,3 +44,18 @@ require('lazy').setup({
     },
   },
 })
+-- vim.opt_local.path = "~/.config/nvim/lua"
+-- Function to add the current directory to localpath
+local function add_current_dir_to_localpath()
+  local current_dir = vim.fn.expand('%:p:h') -- Get the current directory
+  if current_dir ~= '' then
+    -- Append the current directory to localpath
+    vim.opt_local.path:append(current_dir)
+  end
+end
+-- Call the function when entering a buffer
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = add_current_dir_to_localpath,
+})
+-- Set transparent background
+require('config.transparency')

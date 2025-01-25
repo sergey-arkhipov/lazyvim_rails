@@ -3,9 +3,7 @@ return {
   keys = {
     {
       '<leader>y',
-      function()
-        require('osc52').copy_operator()
-      end,
+      function() require('osc52').copy_operator() end,
       expr = true,
       desc = 'copy selection to system clipboard (normal mode)',
     },
@@ -18,9 +16,7 @@ return {
     {
       mode = 'v',
       '<leader>y',
-      function()
-        require('osc52').copy_visual()
-      end,
+      function() require('osc52').copy_visual() end,
       desc = 'copy selection to system clipboard (visual mode)',
     },
   },

@@ -4,16 +4,17 @@ return {
   { 'rebelot/kanagawa.nvim', lazy = true },
   { 'sainnhe/sonokai', lazy = true },
   { 'dracula/vim', lazy = true },
-
+  { 'projekt0n/github-nvim-theme' },
+  { 'catppuccin/nvim' },
+  { 'Mofiqul/vscode.nvim' },
+  { 'navarasu/onedark.nvim' },
+  { 'shaunsingh/nord.nvim' },
+  { 'Mofiqul/dracula.nvim' },
+  { 'EdenEast/nightfox.nvim' },
   {
     'LazyVim/LazyVim',
     opts = {
-      colorscheme = 'gruvbox',
+      colorscheme = 'nordfox',
     },
-    -- opts = function()
-    --   -- load the colorscheme here
-    --   vim.cmd([[colorscheme gruvbox]])
-    --   vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
-    -- end,
   },
 }

@@ -16,9 +16,7 @@ return {
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection with Enter
       }
       opts.snippet = {
-        expand = function(args)
-          require('luasnip').lsp_expand(args.body)
-        end,
+        expand = function(args) require('luasnip').lsp_expand(args.body) end,
       }
       opts.sources = {
         { name = 'nvim_lsp' }, -- Разобрался, работает нормально. Последовательность определяет порядок выдачи
