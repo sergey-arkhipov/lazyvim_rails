@@ -21,7 +21,7 @@ return {
       opts.sources = {
         { name = 'path', keyword_length = 3 },
         { name = 'buffer', keyword_length = 3 },
-        { name = 'nvim_lsp', keyword_length = 3 }, -- Разобрался, работает нормально. Последовательность определяет порядок выдачи
+        { name = 'nvim_lsp', keyword_length = 3 }, -- Последовательность определяет порядок выдачи
         { name = 'luasnip', keyword_length = 2 },
         option = {
           get_bufnrs = function()
