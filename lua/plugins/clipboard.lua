@@ -1,5 +1,6 @@
 return {
   'ibhagwan/smartyank.nvim',
+  enabled = false,
   opts = {
     highlight = {
       enabled = true, -- highlight yanked text

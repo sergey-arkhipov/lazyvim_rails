@@ -9,7 +9,7 @@ local function setBackgroundTransparent()
   vim.api.nvim_set_hl(0, 'foldcolumn', { bg = 'none' })
   vim.api.nvim_set_hl(0, 'folded', { bg = 'none' })
   vim.api.nvim_set_hl(0, 'signcolumn', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'diffview', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'Diffview', { bg = 'none' })
 
   -- transparent background for neotree
   vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })

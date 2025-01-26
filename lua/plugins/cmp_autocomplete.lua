@@ -19,9 +19,10 @@ return {
         expand = function(args) require('luasnip').lsp_expand(args.body) end,
       }
       opts.sources = {
-        { name = 'nvim_lsp' }, -- Разобрался, работает нормально. Последовательность определяет порядок выдачи
-        { name = 'luasnip' },
-        { name = 'buffer' },
+        { name = 'path', keyword_length = 3 },
+        { name = 'buffer', keyword_length = 3 },
+        { name = 'nvim_lsp', keyword_length = 3 }, -- Разобрался, работает нормально. Последовательность определяет порядок выдачи
+        { name = 'luasnip', keyword_length = 2 },
         option = {
           get_bufnrs = function()
             local bufs = {}

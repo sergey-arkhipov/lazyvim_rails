@@ -1,5 +1,6 @@
 return {
   'ojroques/nvim-osc52',
+  enabled = false,
   keys = {
     {
       '<leader>y',
