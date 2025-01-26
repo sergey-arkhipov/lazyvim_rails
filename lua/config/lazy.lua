@@ -59,3 +59,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 -- Set transparent background
 require('config.transparency')
+
+-- Set colorscheme
+vim.cmd([[colorscheme nordfox ]])

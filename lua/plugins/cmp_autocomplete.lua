@@ -35,23 +35,5 @@ return {
       }
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = 'emoji' } }))
     end,
-    keys = {
-      {
-        '<leader>ua',
-        function()
-          vim.g.cmp_disabled = not vim.g.cmp_disabled
-          local msg
-          if vim.g.cmp_disabled == true then
-            msg = 'Autocompletion (cmp) disabled'
-          else
-            msg = 'Autocompletion (cmp) enabled'
-          end
-          vim.notify(msg, vim.log.levels.INFO)
-        end,
-        noremap = true,
-        silent = true,
-        desc = 'toggle autocompletion',
-      },
-    },
   },
 }
