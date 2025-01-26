@@ -19,3 +19,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter' }, {
 -- vim.cmd([[
 --     autocmd BufWritePost * silent! !ctags -R .
 -- ]])
+-- Set filetype yaml for eruby-yaml
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufNewFile' }, {
+  pattern = '*.yml',
+  command = 'setlocal filetype=yaml',
+})
