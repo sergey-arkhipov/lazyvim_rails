@@ -2,7 +2,7 @@ return {
   {
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-emoji' },
-    ---@param opts cmp.ConfigSchema
+    -- -@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require('cmp')
       opts.completion = {
@@ -19,10 +19,11 @@ return {
         expand = function(args) require('luasnip').lsp_expand(args.body) end,
       }
       opts.sources = {
-        { name = 'path', keyword_length = 3 },
-        { name = 'buffer', keyword_length = 3 },
-        { name = 'nvim_lsp', keyword_length = 3 }, -- Последовательность определяет порядок выдачи
-        { name = 'luasnip', keyword_length = 2 },
+        -- Последовательность определяет порядок выдачи
+        { name = 'path', keyword_length = 3, max_item_count = 2 },
+        { name = 'buffer', keyword_length = 3, max_item_count = 4 },
+        { name = 'nvim_lsp', keyword_length = 3, max_item_count = 3 },
+        { name = 'luasnip', keyword_length = 2, max_item_count = 5 },
         option = {
           get_bufnrs = function()
             local bufs = {}
