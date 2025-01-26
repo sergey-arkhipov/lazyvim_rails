@@ -23,18 +23,22 @@ opt.spell = true
 
 -- Now the '+' register will copy to system clipboard using OSC52
 -- Clipboard config
-opt.clipboard = nil
--- vim.g.clipboard = {
---   name = 'OSC 52',
---   copy = {
---     ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
---     ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
---   },
---   paste = {
---     ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
---     ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
---   },
--- }
+-- Clipboard
+-- if vim.env.SSH_TTY then
+--   opt.clipboard:append('unnamedplus')
+--   local function paste() return vim.split(vim.fn.getreg(''), '\n') end
+--   vim.g.clipboard = {
+--     name = 'OSC 52',
+--     copy = {
+--       ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+--       ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+--     },
+--     paste = {
+--       ['+'] = paste,
+--       ['*'] = paste,
+--     },
+--   }
+-- end
 
 -- vim.keymap.set('n', '<leader>c', '"+y')
 -- vim.keymap.set('n', '<leader>cc', '"+yy')
