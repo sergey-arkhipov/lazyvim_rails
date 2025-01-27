@@ -9,8 +9,10 @@ opt.linebreak = true
 opt.wrap = true
 opt.iskeyword:append('-') -- consider string-string as whole word
 -- spelling
-opt.spelllang = { 'en_us', 'ru' } -- Словари рус eng
+-- If the name “cjk” is included, East Asian characters are excluded from spell checking
+opt.spelllang = { 'en', 'ru', 'cjk' } -- Словари рус eng
 opt.spell = true
+opt.spellsuggest = { 'best', 9 }
 
 vim.g.lazyvim_ruby_lsp = 'ruby_lsp'
 vim.g.lazyvim_ruby_formatter = 'rubocop'

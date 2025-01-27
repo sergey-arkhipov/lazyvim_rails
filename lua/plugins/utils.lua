@@ -12,13 +12,8 @@ return {
       },
     },
   },
-  -- Add allign for table and so on
-  {
-    'junegunn/vim-easy-align',
-  },
-  -- Add colorschemas
 
-  -- add colorscheme
+  -- Add colorschemas
   { 'ellisonleao/gruvbox.nvim', lazy = true },
   { 'rebelot/kanagawa.nvim', lazy = true },
   { 'sainnhe/sonokai', lazy = true },
@@ -49,13 +44,5 @@ return {
         floats = 'transparent',
       },
     },
-  },
-  -- Use PandocPaste for precerve formatting
-  {
-    'petRUShka/pandoc_paste.vim',
-    config = function()
-      -- Example: disable default mapping
-      -- vim.g.pandoc_paste_no_mapping = 1
-    end,
   },
 }

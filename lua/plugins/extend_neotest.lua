@@ -1,4 +1,5 @@
 return {
+  -- Add vim-test for run cucumber tests
   {
     'vim-test/vim-test',
     event = 'VeryLazy',
