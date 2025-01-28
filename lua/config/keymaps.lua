@@ -15,7 +15,7 @@ end, { desc = 'Toggle Autocomplete' })
 --
 -- Add map for cucumber tests
 map('n', '<leader>tC', '<cmd>TestFile<cr>', { desc = 'Run Vim-test(cucumber)' })
-map('n', '<leader>tc', '<cmd>TestNearest<cr>', { desc = 'Run Nearest test' })
+map('n', '<leader>tc', '<cmd>TestNearest<cr>', { desc = 'Run Nearest(cucumber)' })
 -- Надо сделать функцию для передачи параметров выделения
 -- map('v', '<leader>ct', "<cmd>'<,'>EasyAlign *|<cr>", { desc = 'Table Align' })
 
@@ -27,7 +27,7 @@ map(
   { desc = 'Enable Transparency' }
 )
 -- Markdown preview toggle
-map('n', '<leader>cm', '<cmd>RenderMarkdown toggle <cr>', { desc = 'Toggle markdown preview' })
+map('n', '<leader>ce', '<cmd>RenderMarkdown toggle <cr>', { desc = 'Toggle markdown preview' })
 --
 -- Copy current buffer name and full path to clipboard
 map('n', '<leader>cP', function()
