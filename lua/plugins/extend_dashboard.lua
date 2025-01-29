@@ -1,5 +1,5 @@
 return {
-  'snacks.nvim',
+  'folke/snacks.nvim',
   opts = function(_, opts)
     table.insert(
       opts.dashboard.preset.keys,
@@ -11,5 +11,14 @@ return {
       7,
       { icon = 'S', key = 'S', desc = 'Select Session', action = require('persistence').select }
     )
+    opts.dashboard.preset.keys[3] =
+      { icon = ' ', key = 'a', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" }
+    opts.dashboard.sections = {
+      { section = 'header' },
+      { section = 'keys', gap = 1, padding = 2 },
+      { icon = ' ', title = 'Recent Files', section = 'recent_files', indent = 2, padding = 2 },
+      { icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 2 },
+      { section = 'startup' },
+    }
   end,
 }
