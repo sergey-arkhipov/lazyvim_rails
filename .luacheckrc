@@ -4,6 +4,13 @@
 globals = {
   'vim',
   'LazyVim',
+  'describe',
+  'it',
+  'before_each',
+  'after_each',
+  'setup',
+  'teardown',
+  'assert',
 }
 
 -- Set the Lua version
