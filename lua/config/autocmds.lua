@@ -18,3 +18,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufNewFile' }, {
   pattern = '*.yml',
   command = 'setlocal filetype=yaml',
 })
+-- Map the custom gf function to gf in Rails files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'eruby', 'html.erb' },
+  callback = function() vim.keymap.set('n', 'gf', ':Railsgf<cr>', { buffer = true, noremap = true, silent = true }) end,
+})
