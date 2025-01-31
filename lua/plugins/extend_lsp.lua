@@ -6,16 +6,34 @@ return {
         settings = {
           Lua = {
             diagnostics = {
-              globals = { 'vim', 'describe', 'it' }, -- Recognize `vim` as a global variable
+              globals = { 'vim', 'it', 'describe', 'spy', 'before_each', 'after_each' }, -- Recognize `vim` as a global variable
+            },
+            runtime = {
+              version = 'LuaJIT',
             },
             workspace = {
-              library = vim.api.nvim_get_runtime_file('', true), -- Make the server aware of Neovim runtime files
-              checkThirdParty = false, -- Disable third-party library checks
+              library = {
+                vim.api.nvim_get_runtime_file('', true), -- Make the server aware of Neovim runtime files
+                vim.fn.expand('~/.luarocks/share/lua/5.4'),
+                '/usr/share/lua/5.4',
+                '/usr/share/lua/5.4/busted',
+              },
             },
-            telemetry = {
-              enable = false, -- Disable telemetry to avoid sending data
-            },
+            checkThirdParty = false, -- Disable third-party library checks
           },
+
+          --     workspace = {
+          --       library = {
+          --         vim.api.nvim_get_runtime_file('', true), -- Make the server aware of Neovim runtime files
+          --         vim.env.VIMRUNTIME,
+          --         '/usr/share/lua/5.4',
+          --       },
+          --       checkThirdParty = false, -- Disable third-party library checks
+          --     },
+          --     telemetry = {
+          --       enable = false, -- Disable telemetry to avoid sending data
+          --     },
+          --   },
         },
       })
     end,
