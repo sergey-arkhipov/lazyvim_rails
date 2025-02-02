@@ -50,3 +50,4 @@ Create ~/.markdownlint.json config file for markdownlint-cli2, for example
 - Reek -check smell code
 - LSP for ruby, definition, gems
 - Markdown - linter and formatter with config
+- Rails-nvim - plegin ala tpope Rails, fast move, partial, etc.

@@ -18,6 +18,8 @@ return {
       indent = { enable = true },
       ensure_installed = {
         'bash',
+        'css',
+        'scss',
         'c',
         'diff',
         'html',
@@ -32,6 +34,7 @@ return {
         'python',
         'query',
         'regex',
+        'ruby',
         'toml',
         'typescript',
         'vim',

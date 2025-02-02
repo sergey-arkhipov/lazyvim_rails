@@ -40,3 +40,6 @@ map('n', '<leader>cp', function()
   vim.fn.setreg('+', path)
   print(path)
 end, { desc = 'Yank filename' })
+
+-- Create Gitlab group keys
+map('n', 'gl', '', { desc = 'Gitlab' })
