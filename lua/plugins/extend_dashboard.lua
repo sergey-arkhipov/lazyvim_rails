@@ -8,11 +8,12 @@ return {
     )
     table.insert(
       opts.dashboard.preset.keys,
-      7,
+      8,
       { icon = 'S', key = 'S', desc = 'Select Session', action = require('persistence').select }
     )
     opts.dashboard.preset.keys[3] =
       { icon = ' ', key = 'a', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" }
+    table.remove(opts.dashboard.preset.keys, 4)
     opts.dashboard.sections = {
       { section = 'header' },
       { section = 'keys', gap = 1, padding = 2 },
