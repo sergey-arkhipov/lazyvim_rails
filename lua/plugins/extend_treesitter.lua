@@ -41,6 +41,7 @@ return {
         'vimdoc',
         'xml',
         'yaml',
+        'embedded_template',
       },
       incremental_selection = {
         enable = true,
