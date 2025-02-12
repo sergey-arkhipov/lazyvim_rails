@@ -20,12 +20,7 @@ map('n', '<leader>tc', '<cmd>TestNearest<cr>', { desc = 'Run Nearest(cucumber)' 
 -- map('v', '<leader>ct', "<cmd>'<,'>EasyAlign *|<cr>", { desc = 'Table Align' })
 
 -- Add set UI background transparent
-map(
-  'n',
-  '<leader>ue',
-  function() require('config.transparency').setBackgroundTransparent() end,
-  { desc = 'Enable Transparency' }
-)
+map('n', '<leader>ue', '<cmd>TransparentToggle<cr>', { desc = 'Toggle Transparency' })
 -- Markdown preview toggle
 map('n', '<leader>ce', '<cmd>RenderMarkdown toggle <cr>', { desc = 'Toggle markdown preview' })
 --

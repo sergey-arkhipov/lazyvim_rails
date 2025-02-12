@@ -30,7 +30,7 @@ return {
       require('nightfox').setup({
         options = {
           -- Compiled file's destination location
-          transparent = true,
+          -- transparent = true,
         },
       })
     end,
@@ -38,10 +38,10 @@ return {
   {
     'folke/tokyonight.nvim',
     opts = {
-      transparent = true,
+      -- transparent = true,
       styles = {
-        sidebars = 'transparent',
-        floats = 'transparent',
+        -- sidebars = 'transparent',
+        -- floats = 'transparent',
       },
     },
   },
