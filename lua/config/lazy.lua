@@ -59,4 +59,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 -- Set colorscheme
-vim.cmd([[colorscheme nordfox ]])
+vim.cmd([[colorscheme tokyonight]])
+-- vim.cmd('highlight FloatBorder guifg=#CCCCCC guibg=NONE') -- Customize FloatBorder
+-- vim.cmd('highlight VertSplit guifg=#CCCCCC guibg=NONE') -- Customize VertSplit
