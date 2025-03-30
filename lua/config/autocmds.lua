@@ -14,10 +14,10 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Enable dimmed on startup
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = '*',
-  callback = function()
-    -- Use vim.schedule to ensure the command runs after Neovim is fully initialized.
-    vim.schedule(function() require('snacks').dim.enable() end)
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--   pattern = '*',
+--   callback = function()
+--     -- Use vim.schedule to ensure the command runs after Neovim is fully initialized.
+--     vim.schedule(function() require('snacks').dim.enable() end)
+--   end,
+-- })
