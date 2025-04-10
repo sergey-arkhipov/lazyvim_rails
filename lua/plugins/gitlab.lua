@@ -1,6 +1,7 @@
 return {
   'harrisoncramer/gitlab.nvim',
   version = '3.3.11',
+  -- branch = 'develop',
   dependencies = {
     { 'MunifTanjim/nui.nvim' },
     { 'nvim-lua/plenary.nvim' },
