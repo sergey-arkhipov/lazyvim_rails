@@ -16,6 +16,10 @@ return {
       discussion_tree = { -- The discussion tree that holds all comments
         auto_open = false, -- Automatically open when the reviewer is opened
       },
+      create_mr = {
+        delete_branch = true,
+        squash = true,
+      },
     })
   end,
 }
