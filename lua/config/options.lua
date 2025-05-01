@@ -15,8 +15,10 @@ opt.spelllang = { 'en', 'ru', 'cjk' } -- Словари рус eng
 opt.spell = true
 opt.spellsuggest = { 'best', 9 }
 
-vim.g.lazyvim_ruby_lsp = 'ruby_lsp'
-vim.g.lazyvim_ruby_formatter = 'rubocop'
+-- This option can take more lines when replaced selected line block
+opt.virtualedit = ''
+-- vim.g.lazyvim_ruby_lsp = 'ruby_lsp'
+-- vim.g.lazyvim_ruby_formatter = 'rubocop'
 
 -- Global Border Settings
 -- cmd('highlight CustomBorder guifg=#FFFFFF guibg=NONE') -- Define a custom border style
