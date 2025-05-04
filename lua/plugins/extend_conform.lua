@@ -1,18 +1,22 @@
 return {
   'stevearc/conform.nvim',
+  event = { 'BufWritePre' },
   opts = {
     formatters_by_ft = {
-      ruby = { 'rubocop' },
+      -- ruby = { 'erb_lint' },
       eruby = { 'htmlbeautifier' },
-      -- eruby = { 'erb_format' },
+      lua = { 'stylua' },
+      javascript = { 'prettier' },
+      typescript = { 'prettier' },
     },
     formatters = {
       htmlbeautifier = {
         prepend_args = { '-b', 1 },
       },
-      -- erb_format = {
-      --   args = { '--print-width', '100', '--stdin' },
-      -- },
+      erb_lint = {
+        command = 'erb_lint',
+        args = { '--format', 'compact' },
+      },
     },
   },
 }
