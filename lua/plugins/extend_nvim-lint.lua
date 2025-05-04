@@ -75,9 +75,8 @@ return {
     lint.linters_by_ft = {
       lua = { 'luacheck' }, -- Lua linter
       markdown = { 'markdownlint-cli2' }, -- Markdown linter
-      javascript = { 'prettier' }, -- JavaScript linter
-      typescript = { 'prettier' }, -- TypeScript linter
-      html = { 'tidy' }, -- HTML linter
+      -- javascript = { 'prettier' }, -- JavaScript linter
+      -- typescript = { 'prettier' }, -- TypeScript linter
       ruby = { 'reek' }, -- Ruby code smell detector
       go = { 'revive' }, -- Go linter
       eruby = { 'erb_lint' }, -- ERB template linter
