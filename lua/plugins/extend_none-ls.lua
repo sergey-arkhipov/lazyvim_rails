@@ -1,9 +1,26 @@
 return {
   'nvimtools/none-ls.nvim',
+  enabled = false,
   opts = function(_, _)
     local null_ls = require('null-ls')
 
     null_ls.setup({
+      -- Добавляем события для более частого обновления диагностики
+      on_attach = function(_, bufnr)
+        local augroup = vim.api.nvim_create_augroup('NullLsFormatting', {})
+        vim.api.nvim_create_autocmd({ 'BufWritePost', 'TextChanged', 'InsertLeave' }, {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+            vim.diagnostic.reset(nil, bufnr) -- Очищаем старую диагностику
+            vim.lsp.buf_request(
+              bufnr,
+              'textDocument/diagnostic',
+              { textDocument = vim.lsp.util.make_text_document_params() }
+            )
+          end,
+        })
+      end,
       sources = {
         null_ls.builtins.formatting.stylua,
         -- Following completion gave a lot of TEXT word !!!
