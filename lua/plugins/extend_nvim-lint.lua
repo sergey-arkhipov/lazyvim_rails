@@ -81,6 +81,7 @@ return {
       ruby = { 'reek' }, -- Ruby code smell detector
       go = { 'revive' }, -- Go linter
       eruby = { 'erb_lint' }, -- ERB template linter
+      yaml = { 'yamllint' },
     }
 
     -- Autocmd to run linters and clear stale diagnostics
