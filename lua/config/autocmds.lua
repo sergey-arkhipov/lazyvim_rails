@@ -21,3 +21,9 @@ vim.api.nvim_create_autocmd('FileType', {
 --     vim.schedule(function() require('snacks').dim.enable() end)
 --   end,
 -- })
+vim.api.nvim_create_user_command('FormatErbLint', function()
+  vim.defer_fn(
+    function() require('conform').format({ formatters = { 'erb_lint' }, async = true, timeout_ms = 15000 }) end,
+    2000
+  ) -- Delay by 2 seconds
+end, { desc = 'Format with erb_lint' })

@@ -33,33 +33,6 @@ return {
       end,
     }
 
-    -- Custom linter for erb_lint (ERB template linter)
-    lint.linters.erb_lint = {
-      name = 'erb_lint',
-      cmd = 'erb_lint',
-      stdin = false,
-      args = { '--format', 'json' },
-      ignore_exitcode = true, -- Ignore non-zero exit codes
-      parser = function(output, _bufnr)
-        local diagnostics = {}
-        local ok, decoded = pcall(vim.json.decode, output)
-        if not ok then
-          vim.notify('Failed to parse erb_lint output: ' .. output, vim.log.levels.ERROR)
-          return diagnostics
-        end
-        for _, issue in ipairs(decoded or {}) do
-          table.insert(diagnostics, {
-            lnum = issue.line - 1,
-            col = issue.column - 1,
-            message = issue.message,
-            severity = vim.diagnostic.severity.ERROR,
-            source = 'erb_lint',
-          })
-        end
-        return diagnostics
-      end,
-    }
-
     -- Custom linter for htmlbeautifier (used as a placeholder, no diagnostics)
     lint.linters.htmlbeautifier = {
       name = 'htmlbeautifier',
@@ -73,19 +46,9 @@ return {
     }
 
     -- Configure markdownlint-cli2 (Markdown linter)
-    lint.linters['markdownlint-cli2'] = {
-      name = 'markdownlint-cli2',
-      cmd = 'markdownlint-cli2',
-      stdin = false,
-      args = {
-        '--config',
-        vim.fn.expand('~/.markdownlint.json'),
-      },
-      ignore_exitcode = true, -- Ignore non-zero exit codes
-      parser = require('lint.parser').from_errorformat('%f:%l:%c %m,%f:%l %m', {
-        source = 'markdownlint-cli2',
-        severity = vim.diagnostic.severity.WARN,
-      }),
+    lint.linters['markdownlint-cli2'].args = {
+      '--config',
+      vim.fn.expand('~/.markdownlint.json'),
     }
 
     -- Configure luacheck (Lua linter)
@@ -98,7 +61,8 @@ return {
         'plain', -- Use plain format for easier parsing
         '--codes', -- Include error codes in output
         -- '--no-color', -- Disable color output for consistency
-        -- "--config", vim.fn.expand("~/.luacheckrc"), -- Uncomment to use a custom config
+        '--config',
+        vim.fn.expand('~/.luacheckrc'), -- Uncomment to use a custom config
       },
       ignore_exitcode = true, -- Ignore non-zero exit codes
       parser = require('lint.parser').from_errorformat('%f:%l:%c: %m', {
