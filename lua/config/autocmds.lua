@@ -27,3 +27,11 @@ vim.api.nvim_create_user_command('FormatErbLint', function()
     2000
   ) -- Delay by 2 seconds
 end, { desc = 'Format with erb_lint' })
+
+-- Autocmd to run linters and clear stale diagnostics
+-- vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave' }, {
+--   callback = function()
+--     vim.diagnostic.reset() -- Clear stale diagnostics to prevent "sticking" messages
+--     require('lint').try_lint() -- Run linters
+--   end,
+-- })

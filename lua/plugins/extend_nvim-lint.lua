@@ -82,13 +82,5 @@ return {
       eruby = { 'erb_lint' }, -- ERB template linter
       yaml = { 'yamllint' },
     }
-
-    -- Autocmd to run linters and clear stale diagnostics
-    vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
-      callback = function()
-        vim.diagnostic.reset() -- Clear stale diagnostics to prevent "sticking" messages
-        require('lint').try_lint() -- Run linters
-      end,
-    })
   end,
 }
