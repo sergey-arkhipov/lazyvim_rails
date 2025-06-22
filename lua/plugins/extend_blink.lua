@@ -5,7 +5,7 @@ return {
     -- snippets = { preset = 'luasnip' },
     -- snippets = { expand = function(args) require('luasnip').lsp_expand(args.body) end },
     keymap = {
-      preset = 'super-tab',
+      preset = 'default',
       -- ['<C-y>'] = { 'select_and_accept' },
       -- ['<Up>'] = { 'select_prev', 'fallback' },
       -- ['<Down>'] = { 'select_next', 'fallback' },

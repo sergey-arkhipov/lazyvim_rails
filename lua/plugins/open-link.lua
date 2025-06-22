@@ -11,10 +11,10 @@ return {
         local gem_name = text:match('^gem%s+[\'"]([^\'"]+)[\'"]')
           or text:match('^[\'"]([^\'"]+)[\'"]')
           or text:match('^([^%s]+)$')
-        local function extract_gem_url(gem_name, output)
+        local function extract_gem_url(from_gem_name, output)
           local lines = vim.split(output, '\n')
-          local escaped_gem_name = escape_pattern(gem_name)
-          local alt_gem_name = gem_name:gsub('-', '_')
+          local escaped_gem_name = escape_pattern(from_gem_name)
+          local alt_gem_name = from_gem_name:gsub('-', '_')
 
           for _, line in ipairs(lines) do
             if
