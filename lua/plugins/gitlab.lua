@@ -21,5 +21,14 @@ return {
         squash = true,
       },
     })
+    -- Переопределение функции merge для использования squash = true и delete_branch = true
+    local gitlab = require('gitlab')
+    local original_merge = gitlab.merge
+    gitlab.merge = function(opts)
+      opts = opts or {}
+      opts.squash = true -- Всегда squash = true
+      opts.delete_branch = true -- Всегда delete_branch = true
+      original_merge(opts)
+    end
   end,
 }
