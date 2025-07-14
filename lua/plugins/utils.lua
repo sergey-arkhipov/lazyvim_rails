@@ -15,15 +15,23 @@ return {
 
   -- Add colorschemas
   { 'ellisonleao/gruvbox.nvim', lazy = true },
+  { 'sainnhe/gruvbox-material', lazy = true },
   { 'rebelot/kanagawa.nvim', lazy = true },
   { 'sainnhe/sonokai', lazy = true },
-  { 'dracula/vim', lazy = true },
   { 'projekt0n/github-nvim-theme' },
-  { 'catppuccin/nvim' },
+  { 'catppuccin/nvim', lazy = true },
   { 'Mofiqul/vscode.nvim' },
-  { 'navarasu/onedark.nvim' },
-  { 'shaunsingh/nord.nvim' },
-  { 'Mofiqul/dracula.nvim' },
+  { 'navarasu/onedark.nvim', lazy = true },
+  { 'shaunsingh/nord.nvim', lazy = true },
+  { 'Mofiqul/dracula.nvim', lazy = true },
+  {
+    'scottmckendry/cyberdream.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {
+      saturation = 0.8,
+    },
+  },
   {
     'EdenEast/nightfox.nvim',
     config = function()
