@@ -59,8 +59,8 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 -- Set colorscheme
--- vim.cmd([[colorscheme dracula]])
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme dracula-soft]])
+-- vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[colorscheme kanagawa]])
 -- vim.cmd('highlight FloatBorder guifg=#CCCCCC guibg=NONE') -- Customize FloatBorder
 -- vim.cmd('highlight VertSplit guifg=#CCCCCC guibg=NONE') -- Customize VertSplit
