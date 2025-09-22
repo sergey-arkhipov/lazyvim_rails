@@ -15,7 +15,7 @@ end, { desc = 'Toggle Autocomplete' })
 --
 -- Add map for cucumber tests
 map('n', '<leader>tC', '<cmd>TestFile<cr>', { desc = 'Run Vim-test(cucumber)' })
-map('n', '<leader>tc', '<cmd>TestNearest<cr>', { desc = 'Run Nearest(cucumber)' })
+map('n', '<leader>tc', '<cmd>TestFile -v<cr>', { desc = 'Run Nearest(cucumber)' })
 -- Надо сделать функцию для передачи параметров выделения
 -- map('v', '<leader>ct', "<cmd>'<,'>EasyAlign *|<cr>", { desc = 'Table Align' })
 

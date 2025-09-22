@@ -1,5 +1,5 @@
 return {
-  'echasnovski/mini.files',
+  'nvim-mini/mini.files',
   keys = {
     -- the keybindings from above
   },
