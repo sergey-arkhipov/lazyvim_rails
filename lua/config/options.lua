@@ -17,7 +17,7 @@ opt.spellsuggest = { 'best', 9 }
 
 -- This option can take more lines when replaced selected line block
 opt.virtualedit = ''
-vim.g.lazyvim_ruby_lsp = 'solargraph'
+vim.g.lazyvim_ruby_lsp = 'ruby_lsp'
 vim.g.lazyvim_ruby_formatter = 'rubocop'
 
 -- Global Border Settings
