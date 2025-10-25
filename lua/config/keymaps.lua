@@ -8,10 +8,10 @@
 local map = vim.keymap.set
 
 -- Toggle autocomplete
-map('n', '<leader>cb', function()
-  vim.b.x = not vim.b.x
-  require('cmp').setup.buffer({ enabled = not vim.b.x })
-end, { desc = 'Toggle Autocomplete' })
+-- map('n', '<leader>cb', function()
+--   vim.b.x = not vim.b.x
+--   require('cmp').setup.buffer({ enabled = not vim.b.x })
+-- end, { desc = 'Toggle Autocomplete' })
 --
 -- Add map for cucumber tests
 map('n', '<leader>tC', '<cmd>TestFile<cr>', { desc = 'Run Vim-test(cucumber)' })
