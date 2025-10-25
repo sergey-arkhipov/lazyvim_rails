@@ -26,11 +26,10 @@ end
 -- vim.opt.verbose = 3
 vim.opt.verbosefile = log_path
 
-vim.cmd('set signcolumn=yes:1')
+vim.opt.signcolumn = 'auto:1-2' -- Ограничивает до 1-2 колонок, меньше нагрузки на подсчёт
 vim.diagnostic.config({ signs = false })
 
---- Maybe call coredump !!!
-vim.g.snacks_animate = false
+-- vim.g.snacks_animate = false
 
 -- Global Border Settings
 -- cmd('highlight CustomBorder guifg=#FFFFFF guibg=NONE') -- Define a custom border style

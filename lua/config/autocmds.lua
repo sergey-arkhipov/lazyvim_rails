@@ -35,3 +35,16 @@ end, { desc = 'Format with erb_lint' })
 --     require('lint').try_lint() -- Run linters
 --   end,
 -- })
+-- Безопасная очистка extmarks за концом буфера
+local cleanup_ns = vim.api.nvim_create_namespace('lazyvim_cleanup_eob')
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  group = vim.api.nvim_create_augroup('CleanupEOB', { clear = true }),
+  pattern = '*',
+  callback = function()
+    local bufnr = 0
+    local last_line = vim.api.nvim_buf_line_count(bufnr) - 1
+    if last_line < 0 then return end
+    pcall(vim.api.nvim_buf_clear_namespace, bufnr, cleanup_ns, last_line + 1, last_line + 101)
+  end,
+})
