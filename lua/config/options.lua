@@ -11,6 +11,7 @@ opt.iskeyword:append('-') -- consider string-string as whole word
 -- spelling
 -- If the name “cjk” is included, East Asian characters are excluded from spell checking
 opt.spelllang = { 'en', 'ru', 'cjk' } -- Словари рус eng
+-- opt.spell = true
 opt.spellsuggest = { 'best', 9 }
 
 -- This option can take more lines when replaced selected line block
@@ -25,6 +26,8 @@ end
 vim.opt.verbose = 3
 vim.opt.verbosefile = log_path
 
+vim.cmd('set signcolumn=yes:1')
+vim.diagnostic.config({ signs = false })
 -- Global Border Settings
 -- cmd('highlight CustomBorder guifg=#FFFFFF guibg=NONE') -- Define a custom border style
 -- cmd('highlight! link FloatBorder CustomBorder') -- Link FloatBorder to CustomBorder

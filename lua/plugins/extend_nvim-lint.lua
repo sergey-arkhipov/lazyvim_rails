@@ -1,7 +1,7 @@
 -- ~/.config/nvim/lua/plugins/lint.lua
 return {
   'mfussenegger/nvim-lint',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = { 'BufReadPre', 'BufNewFile', 'BufWritePost' },
   config = function()
     local lint = require('lint')
 
@@ -82,5 +82,23 @@ return {
       eruby = { 'erb_lint' }, -- ERB template linter
       yaml = { 'yamllint' },
     }
+
+    -- Автоматический линтинг
+    local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
+
+    vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost' }, {
+      group = lint_augroup,
+      callback = function() lint.try_lint() end,
+    })
+
+    -- Также линтим после паузы в редактировании
+    vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertLeave' }, {
+      group = lint_augroup,
+      callback = function() lint.try_lint() end,
+      desc = 'Lint after editing',
+    })
+
+    -- Ручной вызов
+    vim.keymap.set('n', '<leader>cb', function() lint.try_lint() end, { desc = 'Lint current buffer' })
   end,
 }
