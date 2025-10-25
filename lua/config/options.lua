@@ -23,11 +23,15 @@ local log_path = vim.fn.stdpath('log') .. '/verbose.log'
 if vim.fn.getfsize(log_path) > 1000000 then -- если больше 1MB
   os.remove(log_path)
 end
-vim.opt.verbose = 3
+-- vim.opt.verbose = 3
 vim.opt.verbosefile = log_path
 
 vim.cmd('set signcolumn=yes:1')
 vim.diagnostic.config({ signs = false })
+
+--- Maybe call coredump !!!
+vim.g.snacks_animate = false
+
 -- Global Border Settings
 -- cmd('highlight CustomBorder guifg=#FFFFFF guibg=NONE') -- Define a custom border style
 -- cmd('highlight! link FloatBorder CustomBorder') -- Link FloatBorder to CustomBorder
