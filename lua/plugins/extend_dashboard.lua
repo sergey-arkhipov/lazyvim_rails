@@ -1,8 +1,8 @@
 return {
   'folke/snacks.nvim',
   opts = function(_, opts)
-    table.remove(opts.dashboard.preset.keys, 3)
-    table.remove(opts.dashboard.preset.keys, 4)
+    -- table.remove(opts.dashboard.preset.keys, 3)
+    -- table.remove(opts.dashboard.preset.keys, 4)
     table.insert(
       opts.dashboard.preset.keys,
       3,
@@ -13,6 +13,7 @@ return {
       8,
       { icon = 'S', key = 'S', desc = 'Select Session', action = require('persistence').select }
     )
+    table.remove(opts.dashboard.preset.keys, 4)
     opts.dashboard.sections = {
       { section = 'header' },
       { section = 'keys', gap = 1, padding = 2 },
