@@ -74,7 +74,7 @@ return {
     -- Linters by filetype
     lint.linters_by_ft = {
       lua = { 'luacheck' }, -- Lua linter
-      markdown = { 'markdownlint-cli2' }, -- Markdown linter
+      -- markdown = { 'markdownlint-cli2' }, -- Markdown linter
       -- javascript = { 'prettier' }, -- JavaScript linter
       -- typescript = { 'prettier' }, -- TypeScript linter
       ruby = { 'reek' }, -- Ruby code smell detector
