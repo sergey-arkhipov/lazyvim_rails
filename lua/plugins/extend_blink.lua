@@ -3,8 +3,8 @@ return {
   dependencies = 'nvim-mini/mini.snippets',
   opts = {
     -- Snippets work best without any additionals
-    snippets = { preset = 'luasnip' },
-    -- snippets = { preset = 'mini_snippets' },
+    -- snippets = { preset = 'luasnip' },
+    snippets = { preset = 'mini_snippets' },
     -- preset = 'default',
     appearance = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
