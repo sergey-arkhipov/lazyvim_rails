@@ -7,17 +7,9 @@
 -- use `vim.keymap.set` instead
 local map = vim.keymap.set
 
--- Toggle autocomplete
--- map('n', '<leader>cb', function()
---   vim.b.x = not vim.b.x
---   require('cmp').setup.buffer({ enabled = not vim.b.x })
--- end, { desc = 'Toggle Autocomplete' })
---
 -- Add map for cucumber tests
 map('n', '<leader>tC', '<cmd>TestFile<cr>', { desc = 'Run Vim-test(cucumber)' })
 map('n', '<leader>tc', '<cmd>TestFile -v<cr>', { desc = 'Run Nearest(cucumber)' })
--- Надо сделать функцию для передачи параметров выделения
--- map('v', '<leader>ct', "<cmd>'<,'>EasyAlign *|<cr>", { desc = 'Table Align' })
 
 -- Add set UI background transparent
 map('n', '<leader>ue', '<cmd>TransparentToggle<cr>', { desc = 'Toggle Transparency' })
