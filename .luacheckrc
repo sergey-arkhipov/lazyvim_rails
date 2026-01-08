@@ -11,6 +11,7 @@ globals = {
   'setup',
   'teardown',
   'assert',
+  'append',
 }
 
 -- Set the Lua version

@@ -24,14 +24,7 @@ if vim.fn.getfsize(log_path) > 1000000 then -- если больше 1MB
   os.remove(log_path)
 end
 -- vim.opt.verbose = 3
-vim.opt.verbosefile = log_path
-vim.opt.signcolumn = 'yes' -- Ограничивает до 1 колонок, меньше нагрузки на подсчёт
--- vim.diagnostic.config({ signs = false })
-
--- vim.g.snacks_animate = false
-
--- Global Border Settings
--- cmd('highlight CustomBorder guifg=#FFFFFF guibg=NONE') -- Define a custom border style
--- cmd('highlight! link FloatBorder CustomBorder') -- Link FloatBorder to CustomBorder
--- cmd('highlight! link VertSplit CustomBorder') -- Link VertSplit to CustomBorder
--- cmd('highlight! link PmenuBorder CustomBorder') -- Link PmenuBorder to CustomBorder
+opt.verbosefile = log_path
+vim.g.lazyvim_check_clipboard = false
+vim.g.clipboard = 'osc52'
+vim.opt.clipboard = 'unnamedplus'

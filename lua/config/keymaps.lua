@@ -29,4 +29,7 @@ map('n', '<leader>cp', function()
 end, { desc = 'Yank filename' })
 
 -- Create Gitlab group keys
-map('n', 'gl', '', { desc = 'Gitlab' })
+local wk = require('which-key')
+wk.add({
+  { 'gl', group = 'Gitlab' }, -- Создаем группу "Gitlab" для префикса "gl"
+})

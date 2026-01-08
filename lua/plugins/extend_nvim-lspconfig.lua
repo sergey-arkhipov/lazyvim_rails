@@ -1,19 +1,21 @@
 return {
   'neovim/nvim-lspconfig',
-  -- event = 'LazyFile',
-  -- dependencies = {
-  --   'mason.nvim',
-  --   { 'mason-org/mason-lspconfig.nvim', config = function() end },
-  -- },
   opts = {
-    inlay_hints = { enabled = false },
+    inlay_hints = { enabled = true },
     servers = {
+      -- lua_ls = {
+      --   settings = {
+      --     Lua = {
+      --       workspace = {
+      --         checkThirdParty = false,
+      --         library = {
+      --           vim.api.nvim_get_runtime_file('', true),
+      --         },
+      --       },
+      --     },
+      --   },
+      -- },
       gopls = {
-        -- mason = false, -- set to false if you don't want this server to be installed with mason
-        -- Use this to add any additional keymaps
-        -- for specific lsp servers
-        -- ---@type LazyKeysSpec[]
-        -- keys = {},
         settings = {
           gopls = {
             buildFlags = {
