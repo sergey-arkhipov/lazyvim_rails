@@ -27,4 +27,4 @@ end
 opt.verbosefile = log_path
 vim.g.lazyvim_check_clipboard = false
 vim.g.clipboard = 'osc52'
-vim.opt.clipboard = 'unnamedplus'
+opt.clipboard = 'unnamedplus'

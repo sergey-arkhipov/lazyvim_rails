@@ -1,14 +1,10 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-  -- bootstrap lazy.nvim
+if not vim.uv.fs_stat(lazypath) then
   -- stylua: ignore
   vim.fn.system({ "git", "clone", "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
--- vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
--- vim.keymap.del("n", "yS")
--- vim.b["surround_{char2nr('r')}"] = "```\1language: \1\r```"
 
 require('lazy').setup({
   spec = {
